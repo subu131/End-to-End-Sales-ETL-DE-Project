@@ -1,4 +1,3 @@
----
 
 ```markdown
 # Sales Data ETL Pipeline
