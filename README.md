@@ -1,5 +1,3 @@
-**Here's a simpler, focused README.md:**
-
 ---
 
 ```markdown
@@ -262,22 +260,6 @@ Fields: sales_person_id, first_name, last_name,
 ## 🙏 Acknowledgments
 
 Built following the Data Engineering tutorial by **[Manish Kumar](https://www.youtube.com/playlist?list=PLTsNSGeIpGnHdXyLOeZ4m6tIRPvV_2jZd)**
-
-The tutorial provided the foundation for:
-- ETL pipeline architecture
-- Business logic (customer analysis, sales incentives)
-- Dimensional modeling concepts
-
-
-
----
-
-## 📧 Contact
-
-**Your Name**
-- GitHub: [@yourusername](https://github.com/yourusername)
-- LinkedIn: [Your Profile](https://linkedin.com/in/yourprofile)
-- Email: your.email@example.com
 
 ---
 
