@@ -72,6 +72,40 @@ Identify top sales performer each month and calculate:
 └─────────────────────────────────────────────────────────────┘
 ```
 
+```mermaid
+flowchart TD
+    A[AWS S3 Sourceto_process/] --> B[Data Validation Layer]
+    
+    B --> C{File TypeValidation}
+    C -->|CSV| D{SchemaValidation}
+    C -->|Non-CSV| E[error_files/wrong_file_types/]
+    
+    D -->|Valid Schema| F[Extra ColumnHandling]
+    D -->|Invalid Schema| G[error_files/bad_schema/]
+    
+    F --> H[PySparkTransformation]
+    
+    H --> I[(CustomerDimension)]
+    H --> J[(StoreDimension)]
+    H --> K[(Sales TeamDimension)]
+    
+    I & J & K --> L[EnrichedDataset]
+    
+    L --> M[CustomerData MartS3 Parquet]
+    L --> N[SalesData MartS3 Partitioned]
+    L --> O[(MySQLMetrics)]
+    
+    style E fill:#ffcccc
+    style G fill:#ffcccc
+    style M fill:#ccffcc
+    style N fill:#ccffcc
+    style O fill:#ccffcc
+```
+
+
+
+
+
 ---
 
 ## 🔄 Data Flow
@@ -263,3 +297,4 @@ Built following the Data Engineering tutorial by **[Manish Kumar](https://www.yo
 ---
 
 
+```
