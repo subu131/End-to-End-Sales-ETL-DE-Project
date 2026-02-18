@@ -1,5 +1,4 @@
-```
-mermaid
+```mermaid
 sequenceDiagram
     participant S3 as AWS S3
     participant V as Validation
